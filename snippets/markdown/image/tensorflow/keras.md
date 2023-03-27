@@ -7,7 +7,7 @@ import numpy as np
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = load_model("keras_Model.h5", compile=False)
+model = load_model("keras_Model.h5", compile=True)
 
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
@@ -40,6 +40,6 @@ class_name = class_names[index]
 confidence_score = prediction[0][index]
 
 # Print prediction and confidence score
-print("Class:", class_name[2:], end="")
+print("Class:", class_name[:], end="")
 print("Confidence Score:", confidence_score)
 ```
